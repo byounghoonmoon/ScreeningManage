@@ -39,7 +39,7 @@ server:
   port: 8081
 api:
   hospital:
-    url: http://localhost:80822222
+    url: http://localhost:8082
 
 #feign:
 # hystrix:
