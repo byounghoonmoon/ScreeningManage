@@ -1,6 +1,6 @@
 # 4th-team3-health-screening
 
-# screeningReservation (건강검진 예약 서비스  +  마케팅팀 추가[개인] )
+# screeningReservation (건강검진 예약 서비스)
 
 # repo
  1. 병원관리 : https://github.com/byounghoonmoon/HospitalManage.git
@@ -44,7 +44,6 @@
 1. 관리자의 병원 정보 삭제에 따라서 해당 병원에 예약한 예약자의 상태를 변경한다.
 1. 관리자의 병원 정보 삭제에 따라서 예약관리의 해당 내역의 상태가 예약 강제 취소로 변경된다.
 1. 사용자가 건강검진 예약내역 상태를 조회한다.
- ```
 
 ## 비기능적 요구사항
 1. 트랜잭션
@@ -55,7 +54,7 @@
     1. 서킷 브레이킹 프레임워크 > istio-injection + DestinationRule
 1. 성능
     1. 고객은 본인의 예약 상태 및 이력 정보를 확인할 수 있다. > CQRS
-   
+
 
 # 분석/설계
 
@@ -773,31 +772,3 @@ Containers:
 
 ```
 kubectl describe 명령으로 컨테이너에 configMap 적용여부를 알 수 있다. 
-
-
- ```diff
- ## 신규 조직(마케티팅)의 추가
-  ![마케팅추가](https://user-images.githubusercontent.com/25805562/92065363-8d730400-edda-11ea-891f-29647c6c3319.png)
- 
- 
- +1. 마케팅관련 레파지토리 : https://github.com/byounghoonmoon/MarketingManage.git 
- 
-## 시나리오 마케팅 
- +1. 마케팅팀에서는 예약정보를 수집한다.
- +1. 데이터를 분석하여 자주되는 병원의 경우 해당 병원에게 검진인원증원을 요청한다.
- 
-## MSA 설계 
- 
-![이벤트](https://user-images.githubusercontent.com/25805562/92065825-56512280-eddb-11ea-98a6-3714c8e8f303.png)
-
-### 헥사고날 아키텍쳐
-![헥사고날](https://user-images.githubusercontent.com/25805562/92065866-754fb480-eddb-11ea-97af-ffe66d0eaf18.png)
- 
-
-### 신규 조직의 이벤트 발행 
-![KafkaEvent](https://user-images.githubusercontent.com/25805562/92065999-c8296c00-eddb-11ea-8a74-b80939162631.png)
-![Request](https://user-images.githubusercontent.com/25805562/92066002-c95a9900-eddb-11ea-9104-a387c53180da.png)
-### 
- ```   
- 
- 
