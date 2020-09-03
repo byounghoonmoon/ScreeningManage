@@ -28,6 +28,12 @@
   - [오토스케일 아웃](#오토스케일-아웃)
   - [무정지 재배포](#무정지-재배포)
   
+- [개인프로젝트 - 마케팅팀 추가](#개인프로젝트)
+  - [CI/CD 설정](#cicd설정)
+  - [서킷 브레이킹 / 장애격리](#서킷-브레이킹-/-장애격리)
+  - [오토스케일 아웃](#오토스케일-아웃)
+  - [무정지 재배포](#무정지-재배포)
+  
 
 # 서비스 시나리오
 
@@ -772,3 +778,27 @@ Containers:
 
 ```
 kubectl describe 명령으로 컨테이너에 configMap 적용여부를 알 수 있다. 
+
+
+#개인프로젝트
+
+## 개인 프로젝트 신규 조직(마케티팅)의 추가
+
+![마케팅추가](https://user-images.githubusercontent.com/25805562/92065363-8d730400-edda-11ea-891f-29647c6c3319.png)
+
+* 마케팅관련 레파지토리 : https://github.com/byounghoonmoon/MarketingManage.git 
+
+## 시나리오 마케팅 
+ 1. 마케팅팀에서는 예약정보를 수집한다.
+ 1. 데이터를 분석하여 자주되는 병원의 경우 해당 병원에게 검진인원증원을 요청한다.
+ 
+ ## MSA 설계 
+ ![이벤트](https://user-images.githubusercontent.com/25805562/92065825-56512280-eddb-11ea-98a6-3714c8e8f303.png)
+
+## 헥사고날 아키텍쳐
+![헥사고날](https://user-images.githubusercontent.com/25805562/92065866-754fb480-eddb-11ea-97af-ffe66d0eaf18.png)
+ 
+
+### 신규 조직의 이벤트 발행 
+![KafkaEvent](https://user-images.githubusercontent.com/25805562/92065999-c8296c00-eddb-11ea-8a74-b80939162631.png)
+![Request](https://user-images.githubusercontent.com/25805562/92066002-c95a9900-eddb-11ea-9104-a387c53180da.png)
